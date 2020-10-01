@@ -104,6 +104,6 @@ int main()
         default:
             printf("\nEnter a correct choice (1,2,3,4,5)");
         }
-    }while(choice=5);
+    }while(choice==5);//   == is the comparitive logical operator not =,  have a good day
     return 0;
 }
