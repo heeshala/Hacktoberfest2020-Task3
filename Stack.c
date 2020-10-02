@@ -12,7 +12,7 @@ struct stack{
 }st;
 
 //Inserting Element
-void push(int element)
+void push(int ele)
 {
     if((st.top)==size)
     {
