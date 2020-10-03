@@ -20,7 +20,7 @@ void push(int element)
     }
     else
     {
-        st.top--;
+        st.top++;
         printf("\nEnter a Value ");
         scanf("%s",&ele);
         st.arr[st.top]=ele;
@@ -38,7 +38,7 @@ int pop()
     {
         int out;
         out=st.arr[st.top];
-        st.top++;
+        st.top--;
         return out;
     }
 }
@@ -106,4 +106,3 @@ int main()
         }
     }while(choice=5);
     return 0;
-}
