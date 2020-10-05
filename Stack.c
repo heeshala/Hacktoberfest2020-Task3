@@ -12,7 +12,7 @@ struct stack{
 }st;
 
 //Inserting Element
-void push(int element)
+void push(int ele)
 {
     if((st.top)==size)
     {
@@ -22,7 +22,7 @@ void push(int element)
     {
         st.top--;
         printf("\nEnter a Value ");
-        scanf("%s",&ele);
+        scanf("%d",&ele);
         st.arr[st.top]=ele;
     }
 }
