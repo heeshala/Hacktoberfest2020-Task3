@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 //Global Variable
-int size,choice,ele;
+int size,choice;
+char ele;
 
 
 //Creating Stack
@@ -21,7 +22,7 @@ void push(int element)
     else
     {
         st.top--;
-        printf("\nEnter a Value ");
+        printf("\nEnter a Value: ");
         scanf("%s",&ele);
         st.arr[st.top]=ele;
     }
@@ -32,7 +33,7 @@ int pop()
 {
     if((st.top)==-1)
     {
-        printf("\nStack is Empty");
+        printf("\nStack is Empty.");
     }
     else
     {
@@ -56,7 +57,7 @@ void display()
 {
     if((st.top)>=0)
     {
-        printf("\n\nElements in the Stack");
+        printf("\n\nElements in the Stack: ");
         for(i=st.top;i>=0;i++)
         {
             printf("\n%d",st.arr[i]);
@@ -64,7 +65,7 @@ void display()
     }
     else
     {
-        printf("No elements to Display");
+        printf("No elements to Display.");
     }
 }
 
