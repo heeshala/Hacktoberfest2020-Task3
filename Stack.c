@@ -22,7 +22,7 @@ void push(int element)
     {
         st.top--;
         printf("\nEnter a Value ");
-        scanf("%s",&ele);
+        scanf("%d",&ele);
         st.arr[st.top]=ele;
     }
 }
@@ -47,13 +47,14 @@ int pop()
 int peek()
 {
     int display;
-    display=st.arr[st.rear];
+    display=st.arr[st.top];
     return display;
 }
 
 //Display Stack
 void display()
 {
+    int i=0;
     if((st.top)>=0)
     {
         printf("\n\nElements in the Stack");
@@ -107,3 +108,4 @@ int main()
     }while(choice=5);
     return 0;
 }
+
