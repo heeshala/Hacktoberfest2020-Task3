@@ -12,7 +12,7 @@ struct stack{
 }st;
 
 //Inserting Element
-void push(int element)
+void push(int ele)
 {
     if((st.top)==size)
     {
@@ -22,7 +22,7 @@ void push(int element)
     {
         st.top--;
         printf("\nEnter a Value ");
-        scanf("%s",&ele);
+        scanf("%d",&ele);
         st.arr[st.top]=ele;
     }
 }
@@ -103,6 +103,7 @@ int main()
             }
         default:
             printf("\nEnter a correct choice (1,2,3,4,5)");
+                // will genarate the output now
         }
     }while(choice=5);
     return 0;
