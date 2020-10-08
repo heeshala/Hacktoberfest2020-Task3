@@ -9,7 +9,7 @@ struct stack{
     int arr[100];
     int top;
 
-}st;
+}
 
 //Inserting Element
 void push(int element)
@@ -22,7 +22,7 @@ void push(int element)
     {
         st.top--;
         printf("\nEnter a Value ");
-        scanf("%s",&ele);
+        scanf("%d",&ele);
         st.arr[st.top]=ele;
     }
 }
@@ -30,7 +30,7 @@ void push(int element)
 //Removing Element
 int pop()
 {
-    if((st.top)==-1)
+    if((st.top)==-1))
     {
         printf("\nStack is Empty");
     }
@@ -54,7 +54,7 @@ int peek()
 //Display Stack
 void display()
 {
-    if((st.top)>=0)
+    if((st.top)>=0))
     {
         printf("\n\nElements in the Stack");
         for(i=st.top;i>=0;i++)
@@ -78,7 +78,7 @@ int main()
 
     do{
         printf("\nEnter Your Choice  ");
-        scanf("%c",&choice);
+        scanf("%d",&choice);
         switch(choice)
         {
         case 1:
