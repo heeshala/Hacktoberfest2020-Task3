@@ -64,7 +64,7 @@ void display()
     }
     else
     {
-        printf("No elements to Display");
+        printf("No elements to Display");  //empty stack
     }
 }
 
