@@ -14,7 +14,7 @@ struct stack{
 //Inserting Element
 void push(int element)
 {
-    if((st.top)==size)
+    if((st.top)==size)//check if the top of the stack is equal to maximum size
     {
         printf("\n Stack is Full");
     }
@@ -30,7 +30,7 @@ void push(int element)
 //Removing Element
 int pop()
 {
-    if((st.top)==-1)
+    if((st.top)==-1)//if the stack is empty
     {
         printf("\nStack is Empty");
     }
@@ -54,7 +54,7 @@ int peek()
 //Display Stack
 void display()
 {
-    if((st.top)>=0)
+    if((st.top)>=0)// display elements until top of the stack is greater than or equal to zero
     {
         printf("\n\nElements in the Stack");
         for(i=st.top;i>=0;i++)
