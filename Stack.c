@@ -47,13 +47,14 @@ int pop()
 int peek()
 {
     int display;
-    display=st.arr[st.rear];
+    display=st.arr[st.top];
     return display;
 }
 
 //Display Stack
 void display()
 {
+    int i;
     if((st.top)>=0)
     {
         printf("\n\nElements in the Stack");
