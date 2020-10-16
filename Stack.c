@@ -99,7 +99,9 @@ int main()
             }
         case 5:
             {
-                printf("\n\t EXIT Point");break;
+                printf("\n\t EXIT Point");
+                exit(0);
+                break;
             }
         default:
             printf("\nEnter a correct choice (1,2,3,4,5)");
