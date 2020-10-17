@@ -1,14 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 //Global Variable
-int size,choice,ele;
-
-
+char choice[20],ele[20];
+int i;
+int size;
 //Creating Stack
 struct stack{
     int arr[100];
     int top;
-
+    int rear;
 }st;
 
 //Inserting Element
@@ -22,8 +22,8 @@ void push(int element)
     {
         st.top--;
         printf("\nEnter a Value ");
-        scanf("%s",&ele);
-        st.arr[st.top]=ele;
+        scanf("%s",ele);
+        st.arr[st.top]= ele[i];
     }
 }
 
@@ -33,6 +33,7 @@ int pop()
     if((st.top)==-1)
     {
         printf("\nStack is Empty");
+        return 0;
     }
     else
     {
@@ -78,12 +79,12 @@ int main()
 
     do{
         printf("\nEnter Your Choice  ");
-        scanf("%c",&choice);
-        switch(choice)
+        scanf("%s",choice);
+        switch(choice[i])
         {
         case 1:
             {
-                push(ele);break;
+                push(ele[i]);break;
             }
         case 2:
             {
@@ -104,6 +105,6 @@ int main()
         default:
             printf("\nEnter a correct choice (1,2,3,4,5)");
         }
-    }while(choice=5);
+    }while(choice[i]==5);
     return 0;
 }
