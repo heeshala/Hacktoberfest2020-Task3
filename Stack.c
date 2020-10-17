@@ -1,5 +1,5 @@
 #include <studio.h>
-#include <stdlib.h>
+#include <studio.h>
 //Global Variable
 int size,choice,ele;
 
