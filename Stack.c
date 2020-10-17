@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <studio.h>
 #include <stdlib.h>
 //Global Variable
 int size,choice,ele;
