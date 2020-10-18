@@ -1,16 +1,12 @@
-#include <stdio.h>
+#includ <stdio.h>
 #include <stdlib.h>
 //Global Variable
 int size,choice,ele;
-
-
 //Creating Stack
 struct stack{
     int arr[100];
     int top;
-
 }st;
-
 //Inserting Element
 void push(int element)
 {
@@ -22,11 +18,10 @@ void push(int element)
     {
         st.top--;
         printf("\nEnter a Value ");
-        scanf("%s",&ele);
+        scanf("%d",&ele);
         st.arr[st.top]=ele;
     }
 }
-
 //Removing Element
 int pop()
 {
@@ -42,12 +37,11 @@ int pop()
         return out;
     }
 }
-
 //Peek
 int peek()
 {
     int display;
-    display=st.arr[st.rear];
+    display=st.arr[st.top];
     return display;
 }
 
@@ -57,7 +51,6 @@ void display()
     if((st.top)>=0)
     {
         printf("\n\nElements in the Stack");
-        for(i=st.top;i>=0;i++)
         {
             printf("\n%d",st.arr[i]);
         }
@@ -67,7 +60,6 @@ void display()
         printf("No elements to Display");
     }
 }
-
 int main()
 {
     st.top=-1;
@@ -75,7 +67,6 @@ int main()
     scanf("%d",&size);
     printf("\nStack Operations.....");
     printf("\n\t 1.PUSH\n\t 2.POP\n\t 3.PEEK\n\t 4.DISPLAY\n\t 5.EXIT");
-
     do{
         printf("\nEnter Your Choice  ");
         scanf("%c",&choice);
@@ -101,9 +92,13 @@ int main()
             {
                 printf("\n\t EXIT Point");break;
             }
-        default:
+            default:
             printf("\nEnter a correct choice (1,2,3,4,5)");
         }
-    }while(choice=5);
+    }while(choice==5);
     return 0;
 }
+
+
+
+
