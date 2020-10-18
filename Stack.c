@@ -47,7 +47,7 @@ int pop()
 int peek()
 {
     int display;
-    display=st.arr[st.rear];
+    display=st.arr[st.top];
     return display;
 }
 
@@ -78,7 +78,7 @@ int main()
 
     do{
         printf("\nEnter Your Choice  ");
-        scanf("%c",&choice);
+        scanf("%d",&choice);
         switch(choice)
         {
         case 1:
