@@ -8,7 +8,7 @@ int size,choice,ele;
 struct stack{
     int arr[100];
     int top;
-
+  
 }st;
 
 //Inserting Element
@@ -47,7 +47,7 @@ int pop()
 int peek()
 {
     int display;
-    display=st.arr[st.rear];
+    display=st.arr[st.top];
     return display;
 }
 
