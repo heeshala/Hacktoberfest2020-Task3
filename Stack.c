@@ -1,5 +1,6 @@
 #include <stdio.h>
-#include <stdlib.h>
+
+
 //Global Variable
 int size,choice,ele;
 
@@ -22,7 +23,7 @@ void push(int element)
     {
         st.top--;
         printf("\nEnter a Value ");
-        scanf("%s",&ele);
+        scanf("%d",&ele);
         st.arr[st.top]=ele;
     }
 }
@@ -47,7 +48,7 @@ int pop()
 int peek()
 {
     int display;
-    display=st.arr[st.rear];
+    display=st.arr[st.top];
     return display;
 }
 
@@ -57,7 +58,7 @@ void display()
     if((st.top)>=0)
     {
         printf("\n\nElements in the Stack");
-        for(i=st.top;i>=0;i++)
+        for(int i=st.top;i>=0;i++)
         {
             printf("\n%d",st.arr[i]);
         }
@@ -78,31 +79,33 @@ int main()
 
     do{
         printf("\nEnter Your Choice  ");
-        scanf("%c",&choice);
+        scanf("%d",&choice);
         switch(choice)
         {
-        case 1:
+            case 1:
             {
                 push(ele);break;
             }
-        case 2:
+            case 2:
             {
                 printf("%d",pop());
+                break;
             }
-        case 3:
+            case 3:
             {
                 printf("%d",peek());
+                break;
             }
-        case 4:
+            case 4:
             {
                 display();break;
             }
-        case 5:
+            case 5:
             {
                 printf("\n\t EXIT Point");break;
             }
-        default:
-            printf("\nEnter a correct choice (1,2,3,4,5)");
+            default:
+                printf("\nEnter a correct choice (1,2,3,4,5)");
         }
     }while(choice=5);
     return 0;
