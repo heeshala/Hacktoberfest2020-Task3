@@ -14,13 +14,13 @@ struct stack{
 //Inserting Element
 void push(int element)
 {
-    if((st.top)==size)
+    if((st.top)==size-1)
     {
         printf("\n Stack is Full");
     }
     else
     {
-        st.top--;
+        st.top++;
         printf("\nEnter a Value ");
         scanf("%s",&ele);
         st.arr[st.top]=ele;
@@ -38,7 +38,7 @@ int pop()
     {
         int out;
         out=st.arr[st.top];
-        st.top++;
+        st.top--;
         return out;
     }
 }
@@ -57,7 +57,7 @@ void display()
     if((st.top)>=0)
     {
         printf("\n\nElements in the Stack");
-        for(i=st.top;i>=0;i++)
+        for(i=st.top;i>=0;i--)
         {
             printf("\n%d",st.arr[i]);
         }
