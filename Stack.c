@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 //Global Variable
-int size,choice,ele;
+int size,choice,element;
 
 
 //Creating Stack
@@ -12,7 +12,7 @@ struct stack{
 }st;
 
 //Inserting Element
-void push(int element)
+void push(element)
 {
     if((st.top)==size)
     {
@@ -20,10 +20,11 @@ void push(int element)
     }
     else
     {
-        st.top--;
+
         printf("\nEnter a Value ");
-        scanf("%s",&ele);
-        st.arr[st.top]=ele;
+        scanf("%d",&element);
+        st.top = st.top + 1;
+        st.arr[st.top] = element;
     }
 }
 
@@ -47,24 +48,26 @@ int pop()
 int peek()
 {
     int display;
-    display=st.arr[st.rear];
+    display=st.arr[st.top];
     return display;
 }
 
 //Display Stack
 void display()
 {
-    if((st.top)>=0)
+    if((st.top)== -1)
     {
-        printf("\n\nElements in the Stack");
-        for(i=st.top;i>=0;i++)
-        {
-            printf("\n%d",st.arr[i]);
-        }
+        printf("No elements to Display");
+
+
     }
     else
     {
-        printf("No elements to Display");
+        int i;
+ printf("Elements in the Stack \n");
+
+	for(i=st.top; i>=0; --i)
+	printf("\n%d\n",st.arr[i]);
     }
 }
 
@@ -78,20 +81,20 @@ int main()
 
     do{
         printf("\nEnter Your Choice  ");
-        scanf("%c",&choice);
+        scanf("%d",&choice);
         switch(choice)
         {
         case 1:
             {
-                push(ele);break;
+                push("%d");break;
             }
         case 2:
             {
-                printf("%d",pop());
+                printf("%d",pop()); break;
             }
         case 3:
             {
-                printf("%d",peek());
+                printf("%d",peek()); break;
             }
         case 4:
             {
