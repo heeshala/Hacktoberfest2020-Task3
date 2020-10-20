@@ -14,15 +14,16 @@ struct stack{
 //Inserting Element
 void push(int element)
 {
-    if((st.top)==size)
+    if((st.top)==size-1)
     {
         printf("\n Stack is Full");
     }
     else
     {
-        st.top--;
+
         printf("\nEnter a Value ");
-        scanf("%s",&ele);
+        scanf("%d",&ele);
+        st.top++;
         st.arr[st.top]=ele;
     }
 }
@@ -33,13 +34,15 @@ int pop()
     if((st.top)==-1)
     {
         printf("\nStack is Empty");
+        return -1;
     }
     else
     {
         int out;
         out=st.arr[st.top];
-        st.top++;
+        st.top--;
         return out;
+
     }
 }
 
@@ -47,7 +50,7 @@ int pop()
 int peek()
 {
     int display;
-    display=st.arr[st.rear];
+    display=st.arr[st.top];
     return display;
 }
 
@@ -57,7 +60,7 @@ void display()
     if((st.top)>=0)
     {
         printf("\n\nElements in the Stack");
-        for(i=st.top;i>=0;i++)
+        for(int i=st.top;i>=0;i--)
         {
             printf("\n%d",st.arr[i]);
         }
@@ -78,7 +81,7 @@ int main()
 
     do{
         printf("\nEnter Your Choice  ");
-        scanf("%c",&choice);
+        scanf("%d",&choice);
         switch(choice)
         {
         case 1:
@@ -104,6 +107,6 @@ int main()
         default:
             printf("\nEnter a correct choice (1,2,3,4,5)");
         }
-    }while(choice=5);
+    }while(choice!=5);
     return 0;
 }
