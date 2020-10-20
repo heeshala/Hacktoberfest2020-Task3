@@ -1,8 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 //Global Variable
-int size,choice,ele;
-
+int size,ele,choice;
 
 //Creating Stack
 struct stack{
@@ -12,17 +11,19 @@ struct stack{
 }st;
 
 //Inserting Element
-void push(int element)
+void push()
 {
+    int ele;
     if((st.top)==size)
     {
         printf("\n Stack is Full");
     }
     else
     {
-        st.top--;
+       
         printf("\nEnter a Value ");
-        scanf("%s",&ele);
+        scanf("%d",&ele);
+         st.top++;
         st.arr[st.top]=ele;
     }
 }
@@ -38,7 +39,7 @@ int pop()
     {
         int out;
         out=st.arr[st.top];
-        st.top++;
+        st.top--;
         return out;
     }
 }
@@ -46,18 +47,21 @@ int pop()
 //Peek
 int peek()
 {
-    int display;
-    display=st.arr[st.rear];
-    return display;
+    if((st.top==-1))
+    printf("\nStack is empty");
+    else
+    printf("%d",st.arr[st.top]);
+    
 }
 
 //Display Stack
 void display()
 {
+    int i;
     if((st.top)>=0)
     {
         printf("\n\nElements in the Stack");
-        for(i=st.top;i>=0;i++)
+        for(i=st.top;i>=0;i--)
         {
             printf("\n%d",st.arr[i]);
         }
@@ -78,28 +82,33 @@ int main()
 
     do{
         printf("\nEnter Your Choice  ");
-        scanf("%c",&choice);
+        scanf("%d",&choice);
         switch(choice)
         {
         case 1:
             {
-                push(ele);break;
+                push(ele);
+                break;
             }
         case 2:
             {
-                printf("%d",pop());
+              pop();
+              break;
             }
         case 3:
             {
-                printf("%d",peek());
+                peek();
+                break;
             }
         case 4:
             {
-                display();break;
+                display();
+                break;
             }
         case 5:
             {
-                printf("\n\t EXIT Point");break;
+                printf("\n\t EXIT Point");
+                exit(0);
             }
         default:
             printf("\nEnter a correct choice (1,2,3,4,5)");
@@ -107,3 +116,4 @@ int main()
     }while(choice=5);
     return 0;
 }
+
