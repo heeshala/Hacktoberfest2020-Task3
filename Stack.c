@@ -22,7 +22,7 @@ void push(int element)
     {
         st.top--;
         printf("\nEnter a Value ");
-        scanf("%s",&ele);
+        scanf("%d",&ele);
         st.arr[st.top]=ele;
     }
 }
@@ -47,7 +47,7 @@ int pop()
 int peek()
 {
     int display;
-    display=st.arr[st.rear];
+    display=st.arr[st.top];
     return display;
 }
 
@@ -78,7 +78,7 @@ int main()
 
     do{
         printf("\nEnter Your Choice  ");
-        scanf("%c",&choice);
+        scanf("%d",&choice);
         switch(choice)
         {
         case 1:
@@ -104,6 +104,6 @@ int main()
         default:
             printf("\nEnter a correct choice (1,2,3,4,5)");
         }
-    }while(choice=5);
+    }while(choice==5);
     return 0;
 }
