@@ -1,13 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 //Global Variable
-int size,choice,ele;
+int size,choice,ele=0;
 
 
 //Creating Stack
 struct stack{
     int arr[100];
     int top;
+    
 
 }st;
 
@@ -20,10 +21,13 @@ void push(int element)
     }
     else
     {
-        st.top--;
+    	
+        st.top++;
         printf("\nEnter a Value ");
-        scanf("%s",&ele);
-        st.arr[st.top]=ele;
+        scanf("%d",&ele);
+          
+                st.arr[st.top]=ele;
+        
     }
 }
 
@@ -36,9 +40,10 @@ int pop()
     }
     else
     {
+    	
         int out;
         out=st.arr[st.top];
-        st.top++;
+        st.top--;
         return out;
     }
 }
@@ -47,17 +52,17 @@ int pop()
 int peek()
 {
     int display;
-    display=st.arr[st.rear];
+    display=st.arr[st.top];
     return display;
 }
 
 //Display Stack
 void display()
-{
+{ int i=0;
     if((st.top)>=0)
     {
         printf("\n\nElements in the Stack");
-        for(i=st.top;i>=0;i++)
+        for(i=st.top;i>=0;i--)
         {
             printf("\n%d",st.arr[i]);
         }
@@ -78,7 +83,7 @@ int main()
 
     do{
         printf("\nEnter Your Choice  ");
-        scanf("%c",&choice);
+        scanf("%d",&choice);
         switch(choice)
         {
         case 1:
@@ -87,11 +92,11 @@ int main()
             }
         case 2:
             {
-                printf("%d",pop());
+                printf("%d",pop());break;
             }
         case 3:
             {
-                printf("%d",peek());
+                printf("%d",peek());break;
             }
         case 4:
             {
@@ -102,8 +107,8 @@ int main()
                 printf("\n\t EXIT Point");break;
             }
         default:
-            printf("\nEnter a correct choice (1,2,3,4,5)");
+            printf("\nEnter a correct choice (1,2,3,4,5)");break;
         }
-    }while(choice=5);
+    }while(choice!=5);
     return 0;
 }
