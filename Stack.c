@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 //Global Variable
-int size,choice,ele;
+int size,choice,ele,i;
 
 
 //Creating Stack
@@ -9,7 +9,8 @@ struct stack{
     int arr[100];
     int top;
 
-}st;
+}
+st;
 
 //Inserting Element
 void push(int element)
