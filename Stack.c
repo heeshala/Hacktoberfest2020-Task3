@@ -1,7 +1,7 @@
 #include <stdio.h>
-#include <stdlib.h>
+#include <stdio.h>
 //Global Variable
-int size,choice,ele;
+int size,choice,element;
 
 
 //Creating Stack
