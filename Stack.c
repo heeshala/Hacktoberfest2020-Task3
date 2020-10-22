@@ -8,11 +8,12 @@ int size,choice,ele;
 struct stack{
     int arr[100];
     int top;
+    int rear;
 
 }st;
 
 //Inserting Element
-void push(int element)
+void push(int ele)
 {
     if((st.top)==size)
     {
@@ -22,7 +23,7 @@ void push(int element)
     {
         st.top--;
         printf("\nEnter a Value ");
-        scanf("%s",&ele);
+        scanf("%d",&ele);
         st.arr[st.top]=ele;
     }
 }
@@ -33,6 +34,7 @@ int pop()
     if((st.top)==-1)
     {
         printf("\nStack is Empty");
+        return 0;
     }
     else
     {
