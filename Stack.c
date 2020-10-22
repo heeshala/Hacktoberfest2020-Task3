@@ -1,7 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
+
+
 //Global Variable
-int size,choice,ele;
+int size,ele;
+char choice[1];
 
 
 //Creating Stack
@@ -78,12 +81,15 @@ int main()
 
     do{
         printf("\nEnter Your Choice  ");
-        scanf("%c",&choice);
+        scanf(" %c",&choice);
         switch(choice)
         {
         case 1:
             {
-                push(ele);break;
+                printf("\nEnter Number You Want To Insert  ");
+                scanf("%d",&ele);
+                push(ele);
+                break;
             }
         case 2:
             {
