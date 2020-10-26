@@ -3,7 +3,6 @@
 //Global Variable
 int size,choice,ele;
 
-
 //Creating Stack
 struct stack{
     int arr[100];
@@ -20,7 +19,7 @@ void push(int element)
     }
     else
     {
-        st.top--;
+        st.top++;
         printf("\nEnter a Value ");
         scanf("%s",&ele);
         st.arr[st.top]=ele;
@@ -38,7 +37,7 @@ int pop()
     {
         int out;
         out=st.arr[st.top];
-        st.top++;
+        st.top--;
         return out;
     }
 }
@@ -54,10 +53,10 @@ int peek()
 //Display Stack
 void display()
 {
-    if((st.top)>=0)
+    if((st.top)>0)
     {
         printf("\n\nElements in the Stack");
-        for(i=st.top;i>=0;i++)
+        for(i=st.top;i>0;i--)
         {
             printf("\n%d",st.arr[i]);
         }
