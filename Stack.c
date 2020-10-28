@@ -22,7 +22,7 @@ void push(int element)
     {
         st.top--;
         printf("\nEnter a Value ");
-        scanf("%s",&ele);
+        scanf("%d",ele);
         st.arr[st.top]=ele;
     }
 }
@@ -72,7 +72,7 @@ int main()
 {
     st.top=-1;
     printf("Enter a Stack size less than 100 : ");
-    scanf("%d",&size);
+    scanf("%d",size);
     printf("\nStack Operations.....");
     printf("\n\t 1.PUSH\n\t 2.POP\n\t 3.PEEK\n\t 4.DISPLAY\n\t 5.EXIT");
 
