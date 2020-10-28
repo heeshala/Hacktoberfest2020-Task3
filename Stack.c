@@ -59,7 +59,7 @@ void display()
         printf("\n\nElements in the Stack");
         for(i=st.top;i>=0;i++)
         {
-            printf("\n%d",st.arr[i]);
+            printf("\n%s",st.arr[i]);
         }
     }
     else
@@ -72,18 +72,18 @@ int main()
 {
     st.top=-1;
     printf("Enter a Stack size less than 100 : ");
-    scanf("%d",&size);
+    scanf("%s",&size);
     printf("\nStack Operations.....");
     printf("\n\t 1.PUSH\n\t 2.POP\n\t 3.PEEK\n\t 4.DISPLAY\n\t 5.EXIT");
 
     do{
         printf("\nEnter Your Choice  ");
-        scanf("%c",&choice);
+        scanf("%s",&choice);
         switch(choice)
         {
         case 1:
             {
-                push(ele);break;
+                printf("%d",push());break;
             }
         case 2:
             {
@@ -95,7 +95,7 @@ int main()
             }
         case 4:
             {
-                display();break;
+               printf("%d",display());break;
             }
         case 5:
             {
