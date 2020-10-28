@@ -22,7 +22,7 @@ void push(int element)
     {
         st.top--;
         printf("\nEnter a Value ");
-        scanf("%s",&ele);
+        scanf("%d",&ele);
         st.arr[st.top]=ele;
     }
 }
@@ -59,7 +59,7 @@ void display()
         printf("\n\nElements in the Stack");
         for(i=st.top;i>=0;i++)
         {
-            printf("\n%d",st.arr[i]);
+            printf("\n %d",st.arr[i]);
         }
     }
     else
@@ -78,7 +78,7 @@ int main()
 
     do{
         printf("\nEnter Your Choice  ");
-        scanf("%c",&choice);
+        scanf("%d",&choice);
         switch(choice)
         {
         case 1:
