@@ -20,7 +20,7 @@ void push(int element)
     }
     else
     {
-        st.top--;
+        st.top++;//top should be incremented before inserting element
         printf("\nEnter a Value ");
         scanf("%s",&ele);
         st.arr[st.top]=ele;
@@ -38,7 +38,7 @@ int pop()
     {
         int out;
         out=st.arr[st.top];
-        st.top++;
+        st.top--;// top should be decremented after deleting element
         return out;
     }
 }
@@ -47,7 +47,7 @@ int pop()
 int peek()
 {
     int display;
-    display=st.arr[st.rear];
+    display=st.arr[st.top];//topmost element is peeked(replaced rear with top)
     return display;
 }
 
@@ -57,7 +57,7 @@ void display()
     if((st.top)>=0)
     {
         printf("\n\nElements in the Stack");
-        for(i=st.top;i>=0;i++)
+        for(i=st.top;i>=0;i--)//after assigning value pointed by top, top should decrement
         {
             printf("\n%d",st.arr[i]);
         }
@@ -88,10 +88,12 @@ int main()
         case 2:
             {
                 printf("%d",pop());
+                break;
             }
         case 3:
             {
                 printf("%d",peek());
+                break;
             }
         case 4:
             {
@@ -104,6 +106,6 @@ int main()
         default:
             printf("\nEnter a correct choice (1,2,3,4,5)");
         }
-    }while(choice=5);
+    }while(choice!=5);
     return 0;
 }
