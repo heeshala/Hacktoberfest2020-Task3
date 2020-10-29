@@ -14,7 +14,7 @@ struct stack{
 //Inserting Element
 void push(int element)
 {
-    if((st.top)==size)
+    if((st.top)==size-1)
     {
         printf("\n Stack is Full");
     }
