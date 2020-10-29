@@ -57,7 +57,7 @@ void display()
     if((st.top)>=0)
     {
         printf("\n\nElements in the Stack");
-        for(i=st.top;i>=0;i--)//after assigning value pointed by top, top should decrement
+        for(int i=st.top;i>=0;i--)//after assigning value pointed by top, top should decrement
         {
             printf("\n%d",st.arr[i]);
         }
@@ -78,7 +78,7 @@ int main()
 
     do{
         printf("\nEnter Your Choice  ");
-        scanf("%c",&choice);
+        scanf("%d",&choice);
         switch(choice)
         {
         case 1:
