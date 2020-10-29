@@ -20,10 +20,8 @@ void push(int element)
     }
     else
     {
-        st.top--;
-        printf("\nEnter a Value ");
-        scanf("%s",&ele);
-        st.arr[st.top]=ele;
+        st.top++;
+        st.arr[st.top]=element;
     }
 }
 
@@ -38,7 +36,7 @@ int pop()
     {
         int out;
         out=st.arr[st.top];
-        st.top++;
+        st.top--;
         return out;
     }
 }
@@ -46,9 +44,13 @@ int pop()
 //Peek
 int peek()
 {
-    int display;
-    display=st.arr[st.rear];
-    return display;
+  if(st.top == -1)
+  {
+    printf("\n Stack is Empty");
+  }
+  else{
+    return (st.arr[st.top]);
+  }
 }
 
 //Display Stack
@@ -57,7 +59,7 @@ void display()
     if((st.top)>=0)
     {
         printf("\n\nElements in the Stack");
-        for(i=st.top;i>=0;i++)
+        for(int i=st.top;i>=0;i--)
         {
             printf("\n%d",st.arr[i]);
         }
@@ -78,32 +80,30 @@ int main()
 
     do{
         printf("\nEnter Your Choice  ");
-        scanf("%c",&choice);
+        scanf("%d",&choice);
         switch(choice)
         {
-        case 1:
-            {
-                push(ele);break;
-            }
-        case 2:
-            {
-                printf("%d",pop());
-            }
-        case 3:
-            {
-                printf("%d",peek());
-            }
-        case 4:
-            {
-                display();break;
-            }
-        case 5:
-            {
-                printf("\n\t EXIT Point");break;
-            }
-        default:
-            printf("\nEnter a correct choice (1,2,3,4,5)");
+            case 1:
+                    printf("\nEnter a Value ");
+                    scanf("%d",&ele);
+                    printf("Value is %d",ele);
+                    push(ele);
+                    break;
+            case 2:
+                    printf("%d",pop());
+                    break;
+            case 3:
+                    printf("%d",peek());
+                    break;
+            case 4:
+                    display();
+                    break;
+            case 5:
+                    printf("\n\t EXIT Point");
+                    break;
+            default:
+                printf("\nEnter a correct choice (1,2,3,4,5)");
         }
-    }while(choice=5);
+    }while(choice!=5);
     return 0;
 }
