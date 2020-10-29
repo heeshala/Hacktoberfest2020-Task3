@@ -22,8 +22,8 @@ void push(int element)
     {
         st.top--;
         printf("\nEnter a Value ");
-        scanf("%s",&ele);
-        st.arr[st.top]=ele;
+        scanf("%d",&element);
+        st.arr[st.top]=element;
     }
 }
 
@@ -78,7 +78,7 @@ int main()
 
     do{
         printf("\nEnter Your Choice  ");
-        scanf("%c",&choice);
+        scanf("%d",&choice);
         switch(choice)
         {
         case 1:
