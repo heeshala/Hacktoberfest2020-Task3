@@ -1,5 +1,5 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include<stdio.h>
+#include<stdlib.h>
 //Global Variable
 int size,choice,ele;
 
@@ -22,7 +22,7 @@ void push(int element)
     {
         st.top++;//top should be incremented before inserting element
         printf("\nEnter a Value ");
-        scanf("%s",&ele);
+        scanf("%d",&ele);
         st.arr[st.top]=ele;
     }
 }
