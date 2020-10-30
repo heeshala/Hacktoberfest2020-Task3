@@ -1,109 +1,107 @@
+//Other method for stack questions
 #include <stdio.h>
-#include <stdlib.h>
-//Global Variable
-int size,choice,ele;
-
-
-//Creating Stack
-struct stack{
-    int arr[100];
+#define MAXSIZE 5
+ 
+struct stack
+{
+    int stk[MAXSIZE];
     int top;
+};
 
-}st;
-
-//Inserting Element
-void push(int element)
+typedef struct stack STACK;
+STACK s;
+ 
+void push(void);
+int  pop(void);
+void display(void);
+ 
+void main ()
 {
-    if((st.top)==size)
+    int choice;
+    int option = 1;
+    s.top = -1;
+ 
+    printf ("STACK OPERATION\n");
+    while (option)
     {
-        printf("\n Stack is Full");
-    }
-    else
-    {
-        st.top--;
-        printf("\nEnter a Value ");
-        scanf("%s",&ele);
-        st.arr[st.top]=ele;
-    }
-}
-
-//Removing Element
-int pop()
-{
-    if((st.top)==-1)
-    {
-        printf("\nStack is Empty");
-    }
-    else
-    {
-        int out;
-        out=st.arr[st.top];
-        st.top++;
-        return out;
-    }
-}
-
-//Peek
-int peek()
-{
-    int display;
-    display=st.arr[st.rear];
-    return display;
-}
-
-//Display Stack
-void display()
-{
-    if((st.top)>=0)
-    {
-        printf("\n\nElements in the Stack");
-        for(i=st.top;i>=0;i++)
-        {
-            printf("\n%d",st.arr[i]);
-        }
-    }
-    else
-    {
-        printf("No elements to Display");
-    }
-}
-
-int main()
-{
-    st.top=-1;
-    printf("Enter a Stack size less than 100 : ");
-    scanf("%d",&size);
-    printf("\nStack Operations.....");
-    printf("\n\t 1.PUSH\n\t 2.POP\n\t 3.PEEK\n\t 4.DISPLAY\n\t 5.EXIT");
-
-    do{
-        printf("\nEnter Your Choice  ");
-        scanf("%c",&choice);
-        switch(choice)
+        printf ("1. Push\n");
+        printf ("2. Pop\n");
+        printf ("3. Display\n");
+        printf ("4. Exit\n");
+ 
+        printf ("Enter your choice\n");
+        scanf    ("%d", &choice);
+        switch (choice)
         {
         case 1:
-            {
-                push(ele);break;
-            }
+            push();
+            break;
         case 2:
-            {
-                printf("%d",pop());
-            }
+            pop();
+            break;
         case 3:
-            {
-                printf("%d",peek());
-            }
+            display();
+            break;
         case 4:
-            {
-                display();break;
-            }
-        case 5:
-            {
-                printf("\n\t EXIT Point");break;
-            }
-        default:
-            printf("\nEnter a correct choice (1,2,3,4,5)");
+            return;
         }
-    }while(choice=5);
-    return 0;
+        fflush (stdin);
+        printf ("Want to continue(Type 0 or 1)?\n");
+        scanf    ("%d", &option);
+    }
+}
+
+//Inserting Element
+void push ()
+{
+    int num;
+    if (s.top == (MAXSIZE - 1))
+    {
+        printf ("Stack is Full\n");
+        return;
+    }
+    else
+    {
+        printf ("Enter element to be pushed\n");
+        scanf ("%d", &num);
+        s.top = s.top + 1;
+        s.stk[s.top] = num;
+    }
+    return;
+}
+//  Removing Element
+int pop ()
+{
+    int num;
+    if (s.top == - 1)
+    {
+        printf ("Stack is Empty\n");
+        return (s.top);
+    }
+    else
+    {
+        num = s.stk[s.top];
+        printf ("pop element is = %dn", s.stk[s.top]);
+        s.top = s.top - 1;
+    }
+    return(num);
+}
+
+void display ()
+{
+    int i;
+    if (s.top == -1)
+    {
+        printf ("Stack is empty\n");
+        return;
+    }
+    else
+    {
+        printf ("\n Status of the stack is \n");
+        for (i = s.top; i >= 0; i--)
+        {
+            printf ("%d\n", s.stk[i]);
+        }
+    }
+    printf ("\n");
 }
